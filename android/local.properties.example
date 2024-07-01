@@ -1,0 +1,9 @@
+# # This file must *NOT* be checked into Version Control Systems,
+# as it contains information specific to your local configuration.
+# The information in here is only used by Gradle.
+#
+# Location of the Android SDK to use for this project.
+sdk.dir=C\:\\Tools\\Android\\Sdk
+#
+# Location of the Flutter SDK to use for this project.
+flutter.sdk=C\:\\Tools\\Flutter\\flutter_windows_3.7.12-stable\\flutter

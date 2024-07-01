@@ -1,18 +1,33 @@
 name: flutter_bluetooth_serial_ble
 version: 0.5.0
 description: A basic Flutter Bluetooth Serial library
-authors:
-  - Eduardo Folly <edufolly@gmail.com>
-  - Martin Mauch <martin.mauch@gmail.com>
-  - Patryk Ludwikowski <patryk.ludwikowski.7@gmail.com>
-  - Erhannis glued in BLE code from kai-morich's https://github.com/kai-morich/SimpleBluetoothLeTerminal and uploaded it as a new library
+
+#`authors:` - The 'authors' field is no longer used.
+#  - Eduardo Folly <edufolly@gmail.com>
+#  - Martin Mauch <martin.mauch@gmail.com>
+#  - Patryk Ludwikowski <patryk.ludwikowski.7@gmail.com>
+#  - Erhannis glued in BLE code from kai-morich's
+#     https://github.com/kai-morich/SimpleBluetoothLeTerminal and uploaded it as a new library
+
 homepage: https://github.com/Erhannis/flutter_bluetooth_serial_ble
 repository: https://github.com/Erhannis/flutter_bluetooth_serial_ble
 issue_tracker: https://github.com/edufolly/flutter_bluetooth_serial/issues
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=1.17.0"
+  # According to the Flutter documentation / compatibility table here
+  # https://docs.flutter.dev/release/archive
+  #
+  sdk: '>=2.12.0 <3.0.0' # as of 2024-06, the latest stable version is 2.19.6
+  #
+  # if 'dart <3.0.0' is a strict requirement for this project then:
+  # - latest flutter sdk version still using 'dart <3.0.0' is v3.7.12
+  #
+  # if 'dart >=1.12.0' is a strict requirement for this project then:
+  # - latest flutter sdk version still using 'dart >=1.12.0' is v2.0.1
+  #
+  flutter: ">=2.0.1 <=3.7.12"
+  #
+  # Remember to update your `flutter.sdk` in local.properties accordingly.
 
 dependencies:
   flutter:

@@ -1,5 +1,42 @@
 # `flutter_bluetooth_serial_example`
 
+---
+
+## This branch `build-repair` is just an attempt to fix the build process of the example application. 
+It is not intended to be merged into anywhere as-is.
+
+### Additional steps taken outside of this repo:
+
+- add a namespace property to the `android` section of the `build.gradle` file 
+  of the `integration_test` package (dependency)
+
+- download an archived Flutter SDK v3.7.12, available from Github,
+  [or here](https://docs.flutter.dev/release/archive)
+
+### Run flutter commands via wrapper script:
+
+I've added a wrapper script at both `./tools` and `./example/tools` directories
+that you can invoke similarly to the `flutter` command, but it will read and use the
+Flutter SDK version specified in your `local.properties` file.
+
+Example usage:
+
+```powershell
+
+.\tool\legacy_flutter.ps1 clean`
+
+.\tool\legacy_flutter.ps1 devices list
+
+# Note that opts/flags/switches starting with `-` should be enclosed in quotes..
+
+.\tool\legacy_flutter.ps1 run "--debug" "-d" "'SM J530F'"`
+
+.\tool\legacy_flutter.ps1 build apk "--debug" "-d" "'SM J530F'"`
+
+```
+
+---
+
 Example application demonstrates key features of the `flutter_bluetooth_serial_ble` plugin:
 
 + Adapter status monitoring,

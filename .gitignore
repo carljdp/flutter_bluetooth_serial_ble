@@ -80,9 +80,6 @@ android/\.classpath
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# Library
-pubspec.lock
-
 # Scripts
 # None at the moment
 **/.flutter-plugins-dependencies

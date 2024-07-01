@@ -1,29 +1,47 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
     }
+    dependencyLocking {
+        lockFile = file("${rootProject.projectDir}/buildscript-gradle.lockfile")
+        lockAllConfigurations()
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.0.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+    }
+
+    configurations.configureEach {
+        resolutionStrategy {
+            // We'll upgrade/fix this later. Build fails on 1.8.x
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.6.21'
+        }
     }
 }
 
 rootProject.buildDir = '../build'
+
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
     project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
